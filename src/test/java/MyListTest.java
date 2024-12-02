@@ -180,6 +180,34 @@ class MyListTest {
     }
 
     /**
+     * Тест добавления 1000 объектов в список.
+     */
+    @Test
+    void testAddMultipleElements() {
+        for (int i = 0; i < 1000; i++) {
+            list.add(+i);
+        }
+        assertEquals(1000, list.size(), "Size should be 1000 after adding 1000 elements.");
+    }
+
+    /**
+     * Тест удаления 1000 объектов из списка.
+     */
+    @Test
+    void testRemoveMultipleElements() {
+        for (int i = 0; i < 1000; i++) {
+            list.add(i);
+        }
+
+        for (int i = list.size() - 1; i >= 0; i--) {
+            list.remove(i);
+        }
+
+        assertEquals(0, list.size(), "Size should be 0 after removing all elements.");
+    }
+
+
+    /**
      * Тестирует корректность метода toString().
      */
     @Test
