@@ -21,12 +21,15 @@ public class MyList<T> {
     // Массив для хранения элементов
     private Object[] elements;
 
+    // Размер массива по умолчанию
+    private static final int DEFAULT_CAPACITY = 10;
+
     // Текущий размер списка
     private int size;
 
     // Конструктор по умолчанию
     public MyList() {
-        elements = new Object[10];  // Начальный размер массива
+        elements = new Object[DEFAULT_CAPACITY];  // Начальный размер массива
         size = 0;
     }
 
